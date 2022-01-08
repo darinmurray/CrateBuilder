@@ -1,0 +1,368 @@
+
+// This is the sass file. IT is automagically compiled and saved as the same named .css file, so be sure and link the .css file in the HTML, NOT the sass.scss file. see the article below
+https://scalablecss.com/sass-in-2020/
+
+
+
+:root {
+    font-size:16px;
+  }
+  
+  
+  
+    body {
+      background: WhiteSmoke; /*LightSteelBlue ;*/
+      padding-top:15px;
+      margin: 0px;
+      font-family: Helvetica;
+      text-align: center;
+      background-color: aqua;
+    }
+  
+    /* ============================================== */
+    /* ================= Crate Form ================== */
+    /* ============================================== */
+    #crate_form {
+      background: #fff;
+      padding: 10px;
+      font-size: 18px;
+      text-align: center;
+      transition: all 0.2s;
+      margin: 0px auto ;
+      border:1px solid gray;
+      border-radius: 8px;
+      max-width: 600px;  /* fits printed page well */
+       /* width: 100%; */
+    }
+  
+    #rendering_container {
+        margin: 20px auto;
+        padding: .5rem ;
+        background: #fff;
+        border: 1px solid gray;
+        /*FIX THIS FOR ALL BROWSERS ! ! ! ! ! ! ! ! !! ! ! ! ! !*/
+        border-radius: 8px;
+        /* inline-block messes with js scalability */
+        display: inline-block;
+  /* wiht it ON, it fills nicely with crate, whith it off, it does not center properly
+  
+        /* max-width: 600px;  /* fits printed page well */
+      }
+  
+    #side_wrapper, #top_wrapper, #front_wrapper {
+      p adding: .5rem;
+    }
+    #side_wrapper {
+      fl oat: left; /* WHY is this critical to skid width?? */
+    }
+  
+  
+    section h4 {
+      /* .view_title */
+        opacity: 0.4;
+        font-weight:bold;
+        margin-bottom:.5em;
+        width:300px;
+        display: inline;
+    }
+  
+    /* ========= for flex layout only ======== */
+    /* === all sizes are defined in js & via input form == */
+    .container { /* inner wrapper of some kind */
+      display: flex;
+      position: relative;
+      /* flex-grow: 1;  */
+    }
+    .center_panel {    /* main panel */
+      flex-grow: 1;   /* Set the middle element to grow and stretch */
+        display: flex; /* because it's a containter too */
+        flex-direction: column;           /* for sub elements */
+        justify-content: space-between;   /* for sub elements */
+    }
+    .handle_side {
+      position: absolute;
+      display: block;
+      z-index: 999;
+    }
+  
+  
+    .skid_side  {
+      flex-grow: 1;
+  
+    }
+    .top_cleat_ends_container, .skid_ends_container  {
+      display: flex;
+      flex-direction: row;
+  width:inherit;
+    }
+  
+  
+  
+    .cleat_skid_spacer {
+      flex-grow: 1;
+  
+    }
+  
+    .horizontal_cleat_edge {
+  
+    }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    /* ========= for default appearance only ======== */
+    /* === all are defined in js & via input form == */
+  
+    .container {
+      /* These don't seem to be necessary
+      width:300px;
+      height:200px; */
+    }
+  
+    .vertical_cleat {
+      background-color: wheat;
+      background-image: url('./images/Pine_Planking_Vert_1.jpg') ;
+      width:35px;
+    }
+    .vertical_cleat_edge {
+      background-color: wheat;
+      background-image: url('./images/Pine_Planking_Vert_1.jpg') ;
+      width:8px; /* MAKE THIS A JS CALCULATION */
+    }
+  
+    .horizontal_cleat {
+      background-color: wheat;
+      background-image: url('./images/Pine_Planking_Hor_1.jpg') ;
+      height: 35px; /* only active if JS not loaded */
+    }
+    .horizontal_cleat_edge {
+      background-color: wheat;
+      background-image: url('./images/Pine_Planking_Hor_1.jpg') ;
+      height: 8px; /* only active if JS not loaded */
+    }
+  
+    .cleat_end {
+      background-color: peru;
+      background-image: url('./images/EndGrain_1.jpg');
+      background-repeat: repeat;
+      background-size: cover;
+      /* height: 15px;  a defaulted height here is throwing off the js */
+      width: 35px;
+    }
+    .center_panel {
+      background-color: bisque;
+      background-image: url('./images/Plywood_2.jpg') ;
+      background-repeat: repeat;
+      background-size: 80%;
+    }
+    .handle_end {
+      background-color: purple;
+      background-image: url('./images/EndGrain_1.jpg');
+      background-repeat: repeat;
+      background-size: cover;
+    }
+    .rounded_corners_right {
+      -webkit-border-top-right-radius: 4px;
+      -webkit-border-bottom-right-radius: 4px;
+      -moz-border-radius-topright: 4px;
+      -moz-border-radius-bottomright: 4px;
+      border-top-right-radius: 4px;
+      border-bottom-right-radius: 4px;
+    }
+    .rounded_corners_left {
+    -webkit-border-top-left-radius: 4px;
+    -webkit-border-bottom-left-radius: 4px;
+    -moz-border-radius-topleft: 4px;
+    -moz-border-radius-bottomleft: 4px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    }
+    .rounded_corners_3 {
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      border-radius: 3px;
+    }
+    .rounded_corners_5 {
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+    }
+  
+    .handle_top {
+      background-color: black;
+      background-image: url('./images/WoodGrainTile.jpg');
+      background-repeat: no-repeat;
+      width: 30px;
+    }
+    .handle_side {
+      background-color:black;
+      background-image: url('./images/WoodGrainTile_horizontal.jpg');
+      background-repeat: repeat;
+      background-size: 60%;
+      width: 101%;
+      margin-left: -2px;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+    }
+  
+  
+    .skid_side  {
+      background-color:black;
+      background-image: url('./images/WoodGrainTile_horizontal.jpg');
+      background-repeat: repeat;
+      background-size: 60%;
+      height: 75px;
+      position: relative;
+    }
+    .skid_end {
+      background-color: peru;
+      background-image: url('./images/EndGrain_1.jpg');
+      background-repeat: repeat;
+      background-size: cover;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+      height: 50px;
+      width: 50px;
+        }
+  
+    /* ==================== skid S I D E angles =================== */
+    .cutCorner_1 {
+      position:absolute; left:1px; bottom:1px;  content:'';
+      border-bottom-width: 10px ;
+      border-bottom-style: solid ;
+      border-bottom-color: blue ;
+      border-right-width: 10px ;
+      border-right-style: solid ;
+      border-right-color: transparent ;
+    }
+    .cutCorner_2 {
+      position:absolute; left:0px; bottom:0px; content:'';
+      border-bottom-width: 10px ;
+      border-bottom-style: solid ;
+      border-bottom-color: white ;
+      border-right-width: 10px ;
+      border-right-style: solid ;
+      border-right-color: transparent ;
+    }
+    .cutCorner_3 {
+      position:absolute; right:1px; bottom:1px;  content:'';
+      border-bottom-width: 10px ;
+      border-bottom-style: solid ;
+      border-bottom-color: blue ;
+      border-left-width: 10px ;
+      border-left-style: solid ;
+      border-left-color: transparent ;
+    }
+    .cutCorner_4 {
+      position:absolute; right:0px; bottom:0px; content:'';
+      border-bottom-width: 10px ;
+      border-bottom-style: solid ;
+      border-bottom-color: white ;
+      border-left-width: 10px ;
+      border-left-style: solid ;
+      border-left-color: transparent ;
+    }
+  
+  
+  
+  
+    .border {
+      border-top: 1px solid rgba(241, 236, 228,1);
+      border-right: 1px solid rgba(183, 152, 123, 0.60);   /*  232,193,134,1); */
+      border-bottom: 1px solid rgba(183, 152, 123, 0.60);
+      border-left: 1px solid rgba(241, 236, 228,1);
+    }
+  
+    .border_endgrain {
+      border-top: 1px solid rgba(241, 236, 228, 0.20);
+      border-right: 1px solid rgba(183, 152, 123, 0.60);   /*  232,193,134,1); */
+      border-bottom: 1px solid rgba(183, 152, 123, 0.90);
+      border-left: 1px solid rgba(241, 236, 228, 0.60);
+    }
+  
+    .shadow_container {
+      flex-grow: 1;
+    }
+    .upper_left_shadow {
+      box-shadow: 5px 5px 10px -3px rgba(0,0,0,0.22) inset;
+      -webkit-box-shadow: 5px 5px 10px -3px rgba(0,0,0,0.22) inset;
+      -moz-box-shadow: 5px 5px 10px -3px rgba(0,0,0,0.22) inset;
+    }
+  
+    .handle_side_shadodw {
+      box-shadow: -1px 7px 16px -5px rgba(0,0,0,0.22);
+      -webkit-box-shadow: -1px 7px 16px -5px rgba(0,0,0,0.22);
+      -moz-box-shadow: -1px 7px 16px -5px rgba(0,0,0,0.22);
+    }
+  
+    .skid_end_shadow {
+      border-top:1px solid rgba(0,0,0,0.07); /* faint top line */
+      height: 50%;    /* THIS COULD BE js for variable skid size ========= */
+      margin-top:50%; /* THIS COULD BE js for variable skid size ========= */
+      box-shadow: 0px -10px 10px 0px rgba(140, 110, 82, 0.5) inset;
+      -webkit-box-shadow: 0px -10px 10px 0px rgba(140, 110, 82, 0.5) inset;
+      -moz-box-shadow: 0px -10px 10px 0px rgba(140, 110, 82, 0.5) inset;
+      /* Radius bottom only */
+      -webkit-border-bottom-right-radius: 5px;
+      -webkit-border-bottom-left-radius: 5px;
+      -moz-border-radius-bottomright: 5px;
+      -moz-border-radius-bottomleft: 5px;
+      border-bottom-right-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+  
+    /* ============================================== */
+    /* ============== Printable Page ================ */
+    /* ============================================== */
+    @page {
+      size: 8.5in 11in;
+      margin: 5pt 10pt 30pt 10pt;
+    }
+  
+    @media print {
+      /* make this a js option for B&W printing only */
+      /* and turn off 'color-adjust' accordingly */
+      /* .border, .border_endgrain {
+        border: 1px solid black;
+      } */
+    }
+  
+    * {
+        -webkit-print-color-adjust: exact !important;   /* Chrome, Safari, Edge */
+        color-adjust: exact !important;                 /*Firefox*/
+    }
+  
+    form .note{
+      font-size: .7rem
+    }
+    form .final_crate_OD{
+      border: 2px solid red;
+      font-size: 1rem;
+      margin-top: 1em;
+      padding: .3rem 0rem .3rem .8rem;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+  
+    }
+    form .final_crate_OD span{
+      font-size: 1rem;
+      background-color: yellow;
+      padding: .3rem 1rem;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+    }
+  
+  iphone {background-color: red; width:320px;height:10px;display:block;}
+  iphone2 {background-color: gray; width:480px;height:10px;display:block;}
+  
+  
+  
