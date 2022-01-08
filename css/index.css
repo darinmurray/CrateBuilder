@@ -2,7 +2,8 @@
   :root {
     font-size:16px;
   }
-  
+  *, *::before, *::after { box-sizing: border-box; /* gives padding and border from inside */
+  }
   
   
     body {
@@ -43,12 +44,13 @@
         /* max-width: 600px;  /* fits printed page well */
       }
   
-    #side_wrapper, #top_wrapper, #front_wrapper {
-      p adding: .5rem;
-    }
-    #side_wrapper {
-      fl oat: left; /* WHY is this critical to skid width?? */
-    }
+    /* #side_wrapper, #top_wrapper, #front_wrapper {
+      padding: .5rem;
+    } */
+    /* #side_wrapper {
+      float: left;  WHY is this critical to skid width?? 
+      Well, apparently, it isn't
+    } */
   
   
     section h4 {
@@ -97,10 +99,9 @@
   
     }
   
-    .horizontal_cleat_edge {
-  
+    /* .horizontal_cleat_edge {
     }
-  
+   */
   
   
   
@@ -112,37 +113,37 @@
     /* ========= for default appearance only ======== */
     /* === all are defined in js & via input form == */
   
-    .container {
-      /* These don't seem to be necessary
+    /* .container {
+       These don't seem to be necessary
       width:300px;
-      height:200px; */
-    }
+      height:200px; 
+    } */
   
     .vertical_cleat {
       background-color: wheat;
-      background-image: url('./images/Pine_Planking_Vert_1.jpg') ;
+      background-image: url('/images/Pine_Planking_Vert_1.jpg') ;
       width:35px;
     }
     .vertical_cleat_edge {
       background-color: wheat;
-      background-image: url('./images/Pine_Planking_Vert_1.jpg') ;
+      background-image: url('/images/Pine_Planking_Vert_1.jpg') ;
       width:8px; /* MAKE THIS A JS CALCULATION */
     }
   
     .horizontal_cleat {
       background-color: wheat;
-      background-image: url('./images/Pine_Planking_Hor_1.jpg') ;
+      background-image: url('/images/Pine_Planking_Hor_1.jpg') ;
       height: 35px; /* only active if JS not loaded */
     }
     .horizontal_cleat_edge {
       background-color: wheat;
-      background-image: url('./images/Pine_Planking_Hor_1.jpg') ;
+      background-image: url('/images/Pine_Planking_Hor_1.jpg') ;
       height: 8px; /* only active if JS not loaded */
     }
   
     .cleat_end {
       background-color: peru;
-      background-image: url('./images/EndGrain_1.jpg');
+      background-image: url('/images/EndGrain_1.jpg');
       background-repeat: repeat;
       background-size: cover;
       /* height: 15px;  a defaulted height here is throwing off the js */
@@ -150,13 +151,13 @@
     }
     .center_panel {
       background-color: bisque;
-      background-image: url('./images/Plywood_2.jpg') ;
+      background-image: url('/images/Plywood_2.jpg') ;
       background-repeat: repeat;
       background-size: 80%;
     }
     .handle_end {
-      background-color: purple;
-      background-image: url('./images/EndGrain_1.jpg');
+      background-color: rgb(240, 205, 109);
+      background-image: url('/images/EndGrain_1.jpg');
       background-repeat: repeat;
       background-size: cover;
     }
@@ -189,13 +190,14 @@
   
     .handle_top {
       background-color: black;
-      background-image: url('./images/WoodGrainTile.jpg');
+      background-image: url('/images/WoodGrainTile.jpg');
       background-repeat: no-repeat;
       width: 30px;
     }
     .handle_side {
       background-color:black;
-      background-image: url('./images/WoodGrainTile_horizontal.jpg');
+      background-image: url('/images/WoodGrainTile_horizontal.jpg');
+      
       background-repeat: repeat;
       background-size: 60%;
       width: 101%;
@@ -208,7 +210,7 @@
   
     .skid_side  {
       background-color:black;
-      background-image: url('./images/WoodGrainTile_horizontal.jpg');
+      background-image: url('/images/WoodGrainTile_horizontal.jpg');
       background-repeat: repeat;
       background-size: 60%;
       height: 75px;
@@ -216,7 +218,7 @@
     }
     .skid_end {
       background-color: peru;
-      background-image: url('./images/EndGrain_1.jpg');
+      background-image: url('/images/EndGrain_1.jpg');
       background-repeat: repeat;
       background-size: cover;
       -webkit-border-radius: 5px;
@@ -334,12 +336,14 @@
     }
   
     form .note{
-      font-size: .7rem
+      font-size: .7rem;
+      margin-bottom:8px;
+      margin-top:8px;
     }
     form .final_crate_OD{
+      display:inline-block;
       border: 2px solid red;
       font-size: 1rem;
-      margin-top: 1em;
       padding: .3rem 0rem .3rem .8rem;
       -webkit-border-radius: 5px;
       -moz-border-radius: 5px;
