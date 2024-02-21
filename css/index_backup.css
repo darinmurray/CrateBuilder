@@ -10,142 +10,31 @@
 body {
   background: WhiteSmoke; /*LightSteelBlue ;*/
   padding-top: 15px;
-  margin: 20px;
+  margin: 0px;
   font-family: Helvetica;
   text-align: center;
 }
 
 /* ============================================== */
-/* ================= Crate Form ================= */
+/* ================= Crate Form ================== */
 /* ============================================== */
-#cratXXXe_form {
+#crate_form {
   background: #fff;
-  /* padding: 10px; */
-  /* font-size: 18px; */
-  /* text-align: center; */
-  /* transition: all 0.2s; */
-  /* margin: 0px auto; */
+  padding: 10px;
+  font-size: 18px;
+  text-align: center;
+  transition: all 0.2s;
+  margin: 0px auto;
   border: 1px solid gray;
   border-radius: 8px;
   max-width: 600px; /* fits printed page well */
 }
-#form_and_data {
-  display: flex;
-  flex-direction: row;
-  border: 1px solid red;
-  background-color: lightgray;
-}
-form {
-  background-color: lightskyblue;
-  border: 1px solid gray;
-  border-radius: 8px;
-  max-width: 400px;
-  margin: 0 auto;
-}
-form .note {
-  font-size: 0.7rem;
-  margin-bottom: 8px;
-  margin-top: 8px;
-}
-label {
-  display: inline-block;
-  width: 150px;
-  text-align: right;
-  margin-right: 10px;
-}
-
-input,
-select {
-  /* float: left; */
-  width: 40%;
-  padding: 8px;
-  box-sizing: border-box;
-  margin-bottom: 10px;
-}
-
-#dim_inputs {
-  border: 1px solid red;
-  border-radius: 20px;
-}
-#dim_inputs label {
-  width: 50px;
-}
-#dim_inputs input {
-  width: 50px;
-}
-
-/* end of input form */
-
 #header_wrapper {
   margin: 20px auto;
   padding: 0.5rem;
   background: #fff;
   border: 1px solid gray;
   border-radius: 8px;
-}
-
-#final_material_wrapper {
-  background-color: lightpink;
-  max-width: 400px;
-  margin: 0 auto;
-}
-
-.final_crate_OD {
-  display: inline-block;
-  background-color: black;
-  color: white;
-  font-size: 1rem;
-  padding: 5px 10px 5px 10px;
-  margin: 10px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-}
-.final_crate_OD span {
-  font-size: 1rem;
-  /* background-color: yellow; */
-  padding: 0.3rem 1rem;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-}
-
-/* for materials table */
-#materialTable {
-  display: table;
-  border-collapse: collapse;
-  /* width: 80%; */
-  margin: 0px auto;
-  max-width: 600px; /* fits printed page well */
-}
-
-.tableRow {
-  display: table-row;
-}
-
-.headerRow {
-  font-weight: bold;
-  background-color: #eee;
-}
-
-.tableCell {
-  display: table-cell;
-  border: 1px solid #ddd;
-  padding: 8px;
-}
-
-.tableRow.headerRow .tableCell {
-  /* width: 80px; */
-  background-color: lightslategrey;
-}
-
-.tableRow.headerRow .tableCell.wideCell {
-  width: 220px;
-  background-color: lightseagreen;
-}
-.tableRow.headerRow .tableCell.qty {
-  width: 60px;
-  background-color: lightgray;
 }
 
 /* container */
@@ -189,12 +78,9 @@ section h4 {
   display: inline;
 }
 
-/* ============================================== */
-/* ============== Crate Rendering =============== */
-/* ============================================== */
-
 /* ========= for flex layout only ======== */
 /* === all sizes are defined in js & via input form == */
+.container,
 .container_row {
   display: flex;
   flex-direction: row;
@@ -260,9 +146,9 @@ section h4 {
   /* background-image: url("/images/Pine_Planking_Hor_1.jpg"); */
 }
 
-/* .flex-end {
+.flex-end {
   align-content: flex-end;
-} */
+}
 
 .rounded_corners_right {
   -webkit-border-top-right-radius: 4px;
@@ -297,7 +183,7 @@ section h4 {
   background-repeat: no-repeat;
   /* width: 30px; */
 }
-/* .handle_side {
+.handle_side {
   background-color: black;
   background-image: url("/images/WoodGrainTile_horizontal.jpg");
 
@@ -308,7 +194,7 @@ section h4 {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-} */
+}
 
 .horizontal_side_wall {
   background-color: bisque;
@@ -416,11 +302,11 @@ section h4 {
   border: 5px solid gainsboro;
 }
 
-/* .handle_side_shadodw {
+.handle_side_shadodw {
   box-shadow: -1px 7px 16px -5px rgba(0, 0, 0, 0.22);
   -webkit-box-shadow: -1px 7px 16px -5px rgba(0, 0, 0, 0.22);
   -moz-box-shadow: -1px 7px 16px -5px rgba(0, 0, 0, 0.22);
-} */
+}
 
 .skid_end_shadow {
   border-top: 1px solid rgba(0, 0, 0, 0.07); /* faint top line */
@@ -459,6 +345,29 @@ section h4 {
   color-adjust: exact !important; /*Firefox*/
 }
 
+form .note {
+  font-size: 0.7rem;
+  margin-bottom: 8px;
+  margin-top: 8px;
+}
+form .final_crate_OD {
+  display: inline-block;
+  border: 2px solid red;
+  font-size: 1rem;
+  padding: 0.3rem 0rem 0.3rem 0.8rem;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+form .final_crate_OD span {
+  font-size: 1rem;
+  background-color: yellow;
+  padding: 0.3rem 1rem;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
 iphone {
   background-color: red;
   width: 320px;
@@ -470,4 +379,42 @@ iphone2 {
   width: 480px;
   height: 10px;
   display: block;
+}
+
+/* for materials table */
+#materialTable {
+  display: table;
+  border-collapse: collapse;
+  /* width: 80%; */
+  margin: 0px auto;
+  max-width: 600px; /* fits printed page well */
+}
+
+.tableRow {
+  display: table-row;
+}
+
+.headerRow {
+  font-weight: bold;
+  background-color: #eee;
+}
+
+.tableCell {
+  display: table-cell;
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.tableRow.headerRow .tableCell {
+  /* width: 80px; */
+  background-color: lightslategrey;
+}
+
+.tableRow.headerRow .tableCell.wideCell {
+  width: 220px;
+  background-color: lightseagreen;
+}
+.tableRow.headerRow .tableCell.qty {
+  width: 60px;
+  background-color: lightgray;
 }

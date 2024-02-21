@@ -1,336 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Field Storage and Shipping Crate Order Form</title>
+    <meta name="author" content="" />
+    <meta
+      name="description"
+      content="A tool for requesting custom build crates for storage and transport of artifacts from the dig site."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="css/index.css" rel="stylesheet" />
+    <!-- <link href="css/style.css" rel="stylesheet"> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <iphone> 320px </iphone><br />
+    <iphone2> 480px </iphone2>
 
-<head>
-  <meta charset="utf-8">
-  <title>Field Storage and Shipping Crate Order Form</title>
-  <meta name="author" content="">
-  <meta name="description" content="A tool for requesting custom build crates for storage and transport of artifacts from the dig site.">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="css/index.css" rel="stylesheet">
-  <!-- <link href="css/style.css" rel="stylesheet"> -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-  
-</head>
-<body>
-<iphone> 320px </iphone><br>
-<iphone2> 480px </iphone2>
-<header>
-  <h1>Field Finding Crate Request</h1>
-</header>
-
-
-<form id="crate_form" action="/my-handling-form-page" method="post">
-  <div>
-    <label for="name">Artifact Name:</label>
-    <input type="text" id="name" name="item_name" size="25"  maxlength="25">
-    <label for="item_id">ID:</label>
-    <input type="text" id="item_id" name="item_id" size="8"  maxlength="8">
-    <!-- <label for="grid_id">Grid Coordinates:</label>
-    <input type="text" id="grid_id" name="grid_id" size="5"  maxlength="12"> -->
-<br /><br />
-    <label for="height">Height:</label>
-    <input type="text" id="height" name="height" size="5"  maxlength="5">
-
-    <label for="width">Width:</label>
-    <input type="text" id="width" name="width" size="5"  maxlength="5">
-
-    <label for="depth">Depth:</label>
-    <input type="text" id="depth" name="depth" size="5"  maxlength="5">
-  </div>
-  <div class="note">*Enter exact artrifact dimensions only. Two (2) inches of open cel foam lining (or equivelant) will be automatically included in final crate dimensions</div>
-  <span class="final_crate_OD">Crate O.D.: <span> 23" x 45" x 77" </span></span>
-</form>
-
-
-
-<!--  This is for dev only -->
-<!-- <span class="height_slider">
-  Height<input type="range" min="10" max="100" value="30" class="slider" id="h_range">
-</span>
-<span id="h_range_val">here</span>
-
-<span class="width_slider">
-  | Width<input type="range" min="15" max="100" value="30" class="slider" id="w_range">
-</span>
-<span id="w_range_val">here</span>
-
-<span class="depth_slider">
-  | Depth<input type="range" min="10" max="100" value="30" class="slider" id="d_range">
-</span>
-<span id="d_range_val">here</span>
-<br /> -->
-
-
-<div id="rendering_container" > <!-- contains the rendering of the crate -->
-<!-- ==========  T O P   =========== -->
-<section id="top_wrapper"> <h4 class="view_title">TOP</h4>
-    <div class="top_cleat_ends_container">
-      <div class="cleat_end endgrain border" ></div>
-      <div class=" cleat_skid_spacer horizontal_cleat_edge border"></div>
-      <div class="cleat_end endgrain border" ></div>
+    <div id="header_wrapper">
+      <a href="crate.html">
+        <button>Full Crate</button>
+      </a>
+      <header>
+        <h1>One-way Shipper Crate Request</h1>
+      </header>
     </div>
-<div class="container">
-  <div class="handle_top rounded_corners_left"></div>
-    <div class="container "> <!--  <== this WAS container_a -->
-        <!-- <div class="vertical_cleat"></div> -->
-        <div class="center_panel border "> </div>
-        <!-- <div class="vertical_cleat"></div> -->
-    </div><!-- end CONTAINER -->
-  <div class="handle_top rounded_corners_right"></div>
-</div><!-- end CONTAINER -->
-    <div class="top_cleat_ends_container">
-      <div class="cleat_end endgrain border"></div>
-      <div class="cleat_skid_spacer horizontal_cleat_edge border"> </div>
-      <div class="cleat_end endgrain border"></div>
+
+    <div id="form_and_data">
+      <!-- ==========   F O R M    =========== -->
+      <!-- ==========   F O R M    =========== -->
+      <!-- ==========   F O R M    =========== -->
+      <!-- ==========   F O R M    =========== -->
+      <form id="crate_form" action="/my-handling-form-page" method="post">
+        <div>
+          <label for="name">Client:</label>
+          <input
+            type="text"
+            id="client"
+            name="item_client"
+            size="25"
+            maxlength="25"
+          />
+
+          <label for="item_job_number">Job Number:</label>
+          <input
+            type="text"
+            id="item_job_number"
+            name="item_job_number"
+            size="8"
+            maxlength="8"
+          />
+
+          <div class="note">
+            *Enter exact PRODUCT dimensions only. Packing material dimensions
+            will be automatically included in final crate dimensions
+          </div>
+          <div id="dim_inputs">
+            <label for="height">Height:</label>
+            <input
+              type="text"
+              id="height"
+              name="height"
+              size="5"
+              maxlength="5"
+              onfocus="selectInputContents()"
+            />
+
+            <label for="width">Width:</label>
+            <input type="text" id="width" name="width" size="5" maxlength="5" />
+
+            <label for="depth">Depth:</label>
+            <input type="text" id="depth" name="depth" size="5" maxlength="5" />
+          </div>
+        </div>
+        <div>
+          <label for="plywood_thickness">Plywood Thickness:</label>
+          <select id="plywood_thickness" name="plywood_thickness">
+            <option value="0.375">0.375</option>
+            <option value="0.5">0.5</option>
+            <option value="0.75">0.75</option>
+          </select>
+
+          <label for="side_wall_insulation">Side Insulation:</label>
+          <select id="side_wall_insulation" name="side_wall_insulation">
+            <option value="0.125">0.125</option>
+            <option value="0.25">0.25</option>
+            <option value="0.5">0.5</option>
+            <option value="1">1</option>
+            <option value="1.5">1.5</option>
+          </select>
+
+          <label for="bottom_insulation">Bottom Insulation:</label>
+          <select id="bottom_insulation" name="bottom_insulation">
+            <option value="0.125">0.125</option>
+            <option value="0.25">0.25</option>
+            <option value="0.5">0.5</option>
+            <option value="1">1</option>
+            <option value="1.5">1.5</option>
+          </select>
+        </div>
+      </form>
+
+      <div id="final_material_wrapper">
+        <div class="final_crate_OD">
+          Crate O.D.:
+          <span id="final_height_OD"> 23" </span> x
+          <span id="final_width_OD"> 45" </span> x
+          <span id="final_depth_OD"> 77" </span>
+        </div>
+        <div id="materialTable">
+          <div class="tableRow headerRow">
+            <div class="tableCell wideCell">Material</div>
+            <div class="tableCell qty">Qty</div>
+            <div class="tableCell">length</div>
+            <div class="tableCell">width</div>
+          </div>
+          <!-- Rows -->
+          <div class="tableRow" id="two_by_length">
+            <div class="tableCell m">Material</div>
+            <div class="tableCell q">-</div>
+            <div class="tableCell l">-</div>
+            <div class="tableCell w">-</div>
+          </div>
+          <div class="tableRow" id="two_by_width">
+            <div class="tableCell m">Material</div>
+            <div class="tableCell q">-</div>
+            <div class="tableCell l">-</div>
+            <div class="tableCell w">-</div>
+          </div>
+          <div class="tableRow" id="plwyood_top">
+            <div class="tableCell m">Material</div>
+            <div class="tableCell q">-</div>
+            <div class="tableCell l">-</div>
+            <div class="tableCell w">-</div>
+          </div>
+          <div class="tableRow" id="sidewall_insulation_length">
+            <div class="tableCell m">Material</div>
+            <div class="tableCell q">-</div>
+            <div class="tableCell l">-</div>
+            <div class="tableCell w">-</div>
+          </div>
+          <!-- Add 8 more rows as needed -->
+        </div>
+      </div>
     </div>
-</section> <!--  End wrapper -->
-<br />
+    <!-- ==========   D R A W I N G   =========== -->
+    <!-- ==========   D R A W I N G   =========== -->
+    <!-- ==========   D R A W I N G   =========== -->
+    <!-- ==========   D R A W I N G   =========== -->
+    <!-- ==========   D R A W I N G   =========== -->
+    <!-- ==========   D R A W I N G   =========== -->
 
+    <div id="rendering_container" class="responsive-two-column-grid">
+      <!-- ==========  T O P   =========== -->
+      <!-- ==========  T O P   =========== -->
+      <!-- ==========  T O P   =========== -->
+      <section id="top_wrapper">
+        <h4 class="view_title">TOP</h4>
 
-<!-- <section id="front_and_side_wrapper"  > -->
-<!-- ==========  F R O N T  =========== -->
-<section id="front_wrapper"> <h4 class="view_title">FRONT</h4>
-<div class="container"> <!-- on FRONT, Container is NOT package envelope  -->
-    <div class="handle_end border rounded_corners_left"></div>
-        <div class="container"><!--  <== INNER container -->
-          <div class="vertical_cleat  border"></div>
-           <div class="center_panel   ">
-             <div class="horizontal_cleat  border"></div>
-             <div class="shadow_container upper_left_shadow">  </div>
-             <div class="horizontal_cleat  border"></div>
-           </div>
-          <div class="vertical_cleat  border"></div>
-        </div><!-- <== INNER container -->
-    <div class="handle_end border rounded_corners_right"></div>
-</div> <!-- end CONTAINER -->
+        <div class="top_wrapper">
+          <div class="horizontal_2_x_edge border"></div>
 
-<div class="skid_ends_container ">
-  <div class="skid_end endgrain border_endgrain "> <div class="skid_end_shadow "> </div> </div>
-  <div class=" cleat_skid_spacer"></div>
-  <div class="skid_end endgrain border_endgrain "><div class="skid_end_shadow "> </div></div>
-</div>
-</section> <!--  End wrapper -->
+          <div class="container_row">
+            <div class="vertical_2_x_edge border"></div>
+            <div class="top_and_bottom_plywood">
+              <div
+                class="shadow_container upper_left_shadow perimiter_wall_insulation_edge"
+              ></div>
+            </div>
+            <div class="vertical_2_x_edge border"></div>
+          </div>
 
+          <div class="horizontal_2_x_edge border"></div>
+        </div>
+      </section>
 
+      <!-- ==========  S I D E  111111  =========== -->
+      <section id="side_wrapper">
+        <h4 class="view_title">SIDE</h4>
 
+        <div class="side_wrapper">
+          <div class="plywood_edge_grain container_row border"></div>
+          <div class="container_row">
+            <div class="vertical_2_x_edge border"></div>
+            <div class="horizontal_side_wall border"></div>
+            <div class="vertical_2_x_edge border"></div>
+          </div>
+          <div class="plywood_edge_grain container_row border"></div>
 
+          <div class="skid_side">
+            <div class="cutCorner_1"></div>
+            <div class="cutCorner_2"></div>
+            <div class="cutCorner_3"></div>
+            <div class="cutCorner_4"></div>
+          </div>
+        </div>
+      </section>
+      <!--  ==========  E N D  S I D E  1111111   =========== -->
 
-<!-- ==========  S I D E  =========== -->
-<section id="side_wrapper"> <h4 class="view_title">SIDE</h4>
-<div class="container">
-  <div class="handle_side handle_side_shadodw border"></div>
-<div class="container"> <!--  <== this WAS container_a -->
-  <div class="vertical_cleat_edge border"></div>
-  <div class="vertical_cleat border"></div>
-    <div class="center_panel ">
-      <div class="horizontal_cleat border"></div>
-      <div class="shadow_container upper_left_shadow">  </div>
-      <div class="horizontal_cleat border"></div>
+      <!-- <section id="front_and_side_wrapper"  > -->
+      <!-- ==========  F R O N T  =========== -->
+
+      <section id="front_wrapper">
+        <h4 class="view_title">FRONT</h4>
+
+        <div class="container_column">
+          <div class="plywood_edge_grain border"></div>
+          <div class="horizontal_side_wall border"></div>
+          <div class="plywood_edge_grain border"></div>
+        </div>
+
+        <!--  End Container -->
+        <div class="skid_ends_container">
+          <div class="skid_end endgrain border_endgrain">
+            <div class="skid_end_shadow"></div>
+          </div>
+          <div class="skid_end endgrain border_endgrain">
+            <div class="skid_end_shadow"></div>
+          </div>
+        </div>
+      </section>
+      <!--  End wrapper -->
+      <br />
     </div>
-  <div class="vertical_cleat border"></div>
-  <div class="vertical_cleat_edge border"></div>
-</div> <!--  End Container  AAA-->
+    <!--  END rendering container -->
 
-</div> <!--  End Container -->
-<div class="skid_side">
-  <div class="cutCorner_1"></div>
-  <div class="cutCorner_2"></div>
-  <div class="cutCorner_3"></div>
-  <div class="cutCorner_4"></div>
-</div>
-</section> <!--  End wrapper -->
-
-
-<!-- </section> <!- - end front/side wrapper - -> -->
-</div> <!--  END rendering container -->
-
-
-
-
-<script>
-inch = 10 //enlarges the number to reasonable pixel size
-// default size
-default_height = 20*inch
-default_width = 38*inch
-default_depth = 26*inch
-// cleats
-cleat_width = 3.5*inch
-// the JS does not calculate well if you scale cleat)Thickness
-// fix this
-cleat_thickness = inch*.75   //Thickness of the wood
-//skids
-default_skid_height = 3.5*inch
-default_skid_width = 3.5*inch
-default_skid_depth = default_depth
-skid_color = "burlywood"
-skid_angle_color = "tan"
-// handles
-handle_width = 1.5*inch
-handle_height = 3.5*inch
-min_handle_height = 20*inch   // imperative floor height
-
-border_width = 1
-border_allowance = 2
-
-// set the begining crate to default sizes
-// for front and side (HEIGHT) !!
-$('#side_wrapper .container, #front_wrapper .container').css({ height: default_height });
-// for front and top (width) !!
-$('#top_wrapper .container, #front_wrapper .container, .skid_ends_container').css({ width: default_width });
-//sets the indents on left and right of cleat ends, top view
-// accounts changing the size of material used for handles and cleats
-$('.top_cleat_ends_container').css({ width: default_width-(handle_width-cleat_thickness)*2, "margin-left": handle_width-cleat_thickness });
-
-// for top and side (depth) !!
-$('#top_wrapper .container').css({ height: default_depth });
-$('#side_wrapper .container').css({ width: default_depth });
-// default handle rendering accounting for cleat thickness
-$(".handle_top").css(  {"width": handle_width });
-$(".handle_end").css(  {"height": handle_height, "width": handle_width-cleat_thickness });
-$(".handle_side").css(  {"height": handle_height });
-// cleats
-//$('#top_wrapper .container .skid_ends_container').css(  {"height": cleat_thickness}); // ---------------------------------
-//$(".cleat_end").css(  {"height": cleat_thickness, "width": cleat_width }); // ---------------------------------
-$(".vertical_cleat").css(  { "width": cleat_width });
-$(".horizontal_cleat").css(  { "height": cleat_width });
-// skids
-$(".skid_side").css(  { "height": default_skid_height, "width": default_depth });
-$('.skid_end').css({ "margin-left": handle_width-cleat_thickness,
-  "margin-right": handle_width-cleat_thickness,
-  "height": default_skid_height,
-  "width": default_skid_width
- });
-
-// these make the angles from default values
-// calculat and make CSS the same values to work without JS
-// DEFAULT SKIDS FOR 4X4
-  $('.cutCorner_1').css({
-        "border-bottom-width": default_skid_height/2 ,
-        "border-bottom-style": "solid" ,
-        "border-bottom-color": skid_angle_color ,
-        "border-right-width": default_skid_height/2 ,
-        "border-right-style": "solid" ,
-        "border-right-color": "transparent" ,
-  })
-  $('.cutCorner_2').css({
-        "border-bottom-width": default_skid_height/2,
-        "border-bottom-style": "solid" ,
-        "border-bottom-color": "white" ,
-        "border-right-width": default_skid_height/2 ,
-        "border-right-style": "solid" ,
-        "border-right-color": "transparent" ,
-  })
-  $('.cutCorner_3').css( {
-        "border-bottom-width": default_skid_height/2 ,
-        "border-bottom-style": "solid" ,
-        "border-bottom-color": skid_angle_color ,
-        "border-left-width": default_skid_height/2 ,
-        "border-left-styl": "solid" ,
-        "border-left-colo": "transparent" ,
-  })
-
-  $('.cutCorner_4').css( {
-        "border-bottom-width": default_skid_height/2 ,
-        "border-bottom-style": "solid" ,
-        "border-bottom-color": "white" ,
-        "border-left-width": default_skid_height/2 ,
-        "border-left-style": "solid" ,
-        "border-left-color": "transparent" ,
-      })
-
-
-/* ================= WIDTH input ================ */
-// it would be more DRY to make each of these a function
-// and call that function in the 'on input' below
-// or, rather make a single function that does it all
-/* ================= HEIGHT input ================ */
-$('#height').on('input',function(e){
-user_height = parseInt( $('#height').val() )*12
-if (user_height>108) {  // waiting for second digit, less jumpy
-$('#side_wrapper .container, #front_wrapper .container').css({ height: user_height });
-
- if (user_height>min_handle_height) { // keeps handles x height from ground
-   $('.handle_end').css(  {"align-self": "flex-end" });
-   $('.handle_end').css(  {"margin-bottom": min_handle_height });
-   $('.handle_side').css(  {"bottom": min_handle_height });
- }
- else {
-   $('.handle_end').css(  {"align-self": "flex-begin" }); // sticks to top
-   $('.handle_end').css(  {"margin-bottom": '' });  // remove any value
-   $('.handle_side').css(  {"bottom": '' });             // remove any value
- }
-
-} // first if statement
-});
-/* ================= Width input ================ */
-$('#width').on('input',function(e){
-  user_height = parseInt( $('#width').val() )*12
-if (user_height>=108) {  // waiting for second digit, less jumpy
-$('#top_wrapper .container, #front_wrapper .container, .skid_ends_container').css({ width: user_height });
-$('.top_cleat_ends_container').css({ width: user_height-(handle_width-cleat_thickness)*2, "margin-left": handle_width-cleat_thickness });
-}
-
-});
-
-/* ================= DEPTH input ================ */
-$('#depth').on('input',function(e){
-user_depth = parseInt( $('#depth').val() )*12
-if (user_depth>108) {  // waiting for second digit, less jumpy
-
-$('#top_wrapper .container').css({ height: user_depth });
-$('#side_wrapper .container, .skid_side').css({ width: user_depth });
-
-// scall form drawing to hit max width if greater than form width
-// positioning here is shit. Fix this
-scale_to = 600/user_depth
-if ( user_depth > 264 ) {
-$('#rendering_container').css({
-  transform: "scale("+scale_to+")",
-  "transform-origin": "top center"
-});
-// experimental only
-  $('#rendering_container').css( {
-    "border": "1px solid green",
-    //  "max-width": "1200px",
-    //  "margin-left" : "20px"
-    //    "display" :" block"
-    });
-  // } else if ( user_depth <= 264 ) {
-  //   $('#rendering_container').css({
-  //     transform: "scale(1)",
-  //     "transform-origin": "top center",
-  //     "display" :" inline-block"
-  //   });
-  //
-}
-
-} // first if statement
-});
-
-// codepen for scaling to viewport
-// https://codepen.io/edwardpayton/pen/pjyogj
-
-
-// REVISIT THIS LATER *+*+*+*+*+*+**+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+
-// // $(window).height();
-// // $(window).width();
-// $(window).on('resize', function(){
-//   // OK, this should be a percentage of window IF crate is x size and viewport is small, etc...
-//     var win = $(this); //this = window
-//     scale_to = win.width()/800 //0.5 //(win.width);
-// //     if (win.height() >= 320) { $('#rendering_container').css({ border: "3px solid blue" });}
-// //     if (win.width() >= 400) { $('#rendering_container').css({ transform: "scale("+scale_to+")", "transform-origin": "top center" }); }
-// $('#rendering_container').css({ transform: "scale("+scale_to+")", "transform-origin": "top center" });
-// });
-// REVISIT THIS LATER *+*+*+*+*+*+**+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+
-
-
-
-
-</script>
-
-  <!-- <script src="js/CrateMaker.js"></script> -->
-</body>
+    <script src="js/index.js"></script>
+  </body>
 </html>
