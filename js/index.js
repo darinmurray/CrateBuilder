@@ -1,536 +1,330 @@
-cleat_width = 45
-cleat_thickness = 7 //Thickness of the wood
-
-border_width = 1
-border_allowance = 2 
-
-default_height = 12*12
-default_width = 24*12
-default_depth = 24*12
-//skids
-default_skid_height = 45
-default_skid_width = 45
-default_skid_depth = default_depth
-skid_color = "burlywood"
-// handles
-handle_depth = 20
-handle_height = 50
-
-// colors.   tan, burlywood, wheat
-handle_border_color = "black"
-handle_color = "tan"
-border_color = "black"
-plywood_color = "wheat" 
-diminsional_wood_color = "tan"
-
-opacity = 0.5   
-// layout
-gap_tween_drawings = 20
-
-
 /* ============================================== */
 /* =============== Generate SKIDS =============== */
 /* ============================================== */
-// general fill and stroke of skids
-     $('#front_left_skid, #front_right_skid, #side_right_skid').css({
-         background: skid_color,
-         "border-color": border_color,
-         "border-width": border_width,
-         "border-style": "solid"   
-     })
-     // color of angled stroke on skids
-     $('.cutCorner_1, .cutCorner_3').css({
-         "border-bottom-color": border_color,
-     })
-     // Default HEIGHT and WIDTH on all skids
-     $('#front_left_skid, #front_right_skid').css({
-         height: default_skid_height,
-         width: default_skid_width,
-     })
-     $('#side_right_skid').css({
-         height: ((parseInt(default_skid_height)) +'px'), 
-     })
- 
 
-
-// MAKE A FUNCTION TO CALCULATE RENDERING_CONTAINER BASED ON ALL INPUTS DEFAULT OR USER
-
-
-
-
-/* ============================================== */
-/* ================= hide CLEATS ================ */
-/* ============================================== */
- //$('#front .cleat').toggle()
-$('#front_top_cleat, #front_bottom_cleat').hide()
-
-/* ============================================== */
-/* ================= make basic crate CLEATS ================ */
-/* ============================================== */
-$('#side_top_cleat').hide()
-
-
-
-
-
-
-
-/* ============================================== */
-/* ========= CONTAINTERS and GENERAL ============ */
-/* ============================================== */
-$('#side_container').css('padding-left', gap_tween_drawings  )
-
-$('.edge_h, .edge_v').css('border-color', border_color )
-
-$('.handle').css('background-color', handle_color )
-$('.handle').css('border-color', handle_border_color ) 
-
-// $('.handle').css('display','none') 
-$('.cleat').css('border-color', border_color ) 
-$('.cleat').css('opacity', opacity ) 
-
-$('.cleat').css('background-color', diminsional_wood_color ) 
-
-
-
-
-
-
-/* ============================================== */
-/* =============== default - T O P  ============== */
-/* ============================================== */
-//        // for WIDTH
-//        $('#top_container').css('width', default_width+handle_depth*2+border_allowance) //==========
-//        $('#top_container').css('height', default_depth+(cleat_thickness*2)+border_allowance*2) 
-//        $('#top_container').css('margin-bottom', gap_tween_drawings  ) // this '*3' is just for extra room for adding top view cleets
-//
-//        $('#top').css('width', default_width-border_allowance)
-//        // for DEPTH
-//        $('#top').css('height', default_depth )
-//        $('#top_left_handle, #top_right_handle').css('height', default_depth )
-//
-//            $('#top_back_left_cleat, #top_back_right_cleat, #top_front_left_cleat, #top_front_right_cleat').css({
-//                'width': cleat_width,
-//                'height': cleat_thickness,
-//            })
-//            $('#top_back_left_cleat, #top_back_right_cleat').css({
-//                'margin-bottom': -border_width
-//            })
-//            $('#top_front_left_cleat, #top_front_right_cleat').css({
-//                'margin-top': -border_width
-//            })
-//            
-//            $('#top_back_left_cleat, #top_front_left_cleat').css({
-//                'margin-left': handle_depth+border_width-cleat_thickness,
-//            })
-//            $('#top_back_right_cleat, #top_front_right_cleat').css({
-//                'margin-right': handle_depth+border_width-cleat_thickness,
-//            })
-            
-
-
-    // overall top HEIGHT is controlled by #top / Height
-    $('#top_wrapper').css({
-     width: default_width,
-     });
-    // overall top WIDTH is controlled by #top_wrapper / width
-    $('#top').css({
-     height: default_height,
-     });
-
-    $('.top_back_cleat_container').css({
-    height: cleat_thickness,
-    "margin-left": handle_depth-cleat_thickness,
-    "margin-right": handle_depth-cleat_thickness,
-    });
- 
-    $('.top_back_left_cleat, .top_back_right_cleat').css({
-    width: cleat_width,
-    });
- 
-    $('#top_left_handle, #top_right_handle').css({
-    width: handle_depth,
-    });
-     $('.handle').css({
-    "background-color": handle_color,
-    });
-    
-    
-    
-
-
-
-// NOT DYNAMIC TO SIZE
-        // handles - front
-        $('#top_left_handle, #top_right_handle').css('width', handle_depth )
- //       $('#top').css('left',(handle_depth+border_width))
-//        $('#top').css('border-color', border_color ) 
-//        $('#top').css('background-color', plywood_color ) 
-
-
-
-
-
-//            // CLEATS
-//                $('#front_top_cleat').css('width',default_width) //hidden for basic crate
-//                $('#front_top_cleat').css('height',cleat_width) //hidden for basic crate
-//                $('#front_bottom_cleat').css('width',default_width)  //hidden for basic crate
-//                $('#front_bottom_cleat').css('height',cleat_width)  //hidden for basic crate
-//            // Use these for all four cleats
-//            //$('#front_left_cleat').css('height',(default_height-(cleat_width*2) - border_allowance))
-//            //$('#front_right_cleat').css('height',(default_height-(cleat_width*2) - border_allowance))
-// 
-//            // Use these for SIDE ONLY, basic crate cleats
-//            $('#front_left_cleat, #front_right_cleat').css('height', default_height )
-//            $('#front_left_cleat, #front_right_cleat').css('top', -border_width  )
-//            $('#front_left_cleat').css('left',"-5px")
-//            $('#front_right_cleat').css('right',"-5px")
-//            $('#front_right_cleat, #front_left_cleat').css('z-index', 9999 )
-//
-//            $('#front_left_cleat').css('width', cleat_width)
-//            $('#front_right_cleat').css('width', cleat_width)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ============================================== */
-/* =============== default - FRONT ============== */
-/* ============================================== */
-$('#front_container').css('width',default_width+handle_depth+handle_depth+border_allowance) //==========
-    // handles - front
-    $('#front_left_handle, #front_right_handle').css('width', handle_depth )
-    $('#front_left_handle, #front_right_handle').css('height', handle_height )
-        // size
-        $('#front').css('width',default_width-border_allowance)
-        $('#front').css('height',default_height)
-        $('#front').css('left',(handle_depth+border_width))
-        $('#front').css('border-color', border_color ) 
-            // CLEATS
-                $('#front_top_cleat').css('width',default_width) //hidden for basic crate
-                $('#front_top_cleat').css('height',cleat_width) //hidden for basic crate
-                $('#front_bottom_cleat').css('width',default_width)  //hidden for basic crate
-                $('#front_bottom_cleat').css('height',cleat_width)  //hidden for basic crate
-            // Use these for all four cleats
-            //$('#front_left_cleat').css('height',(default_height-(cleat_width*2) - border_allowance))
-            //$('#front_right_cleat').css('height',(default_height-(cleat_width*2) - border_allowance))
- 
-            // Use these for SIDE ONLY, basic crate cleats
-            $('#front_left_cleat, #front_right_cleat').css('height', default_height )
-            $('#front_left_cleat, #front_right_cleat').css('top', -border_width  )
-            $('#front_left_cleat').css('left',"-5px")
-            $('#front_right_cleat').css('right',"-5px")
-            $('#front_right_cleat, #front_left_cleat').css('z-index', 9999 )
-
-            $('#front_left_cleat').css('width', cleat_width)
-            $('#front_right_cleat').css('width', cleat_width)
-
-
-
-
-/* ============================================== */
-/* =============== default - SIDE ============== */
-/* ============================================== */
-$('#side').css('height',default_height)
-$('#side').css('width',default_depth)
-    // handles
-    $('#side_handle').css('height', handle_height )
-    // set position of handle relative to covering the underlying crate size
-    $('#side_handle').css('width', default_depth )
-    $('#side_handle').css('top', -border_width )
-    $('#side_handle').css('left', -border_width )
-
-        // CLEATS
-        $('#side_top_cleat, #side_bottom_cleat').css('width',default_depth)
-        $('#side_top_cleat, #side_bottom_cleat').css('height',cleat_width)
-        // $('#side_bottom_cleat').css('width',default_depth)
-        // $('#side_bottom_cleat').css('height',cleat_width)
-            // hide bottom cleat for BASIC CRATE
-            $('#side_bottom_cleat').hide() 
-        $('#side_left_cleat, #side_right_cleat').css('width',cleat_width)
-            // USE handle_height if Basic crate
-        $('#side_left_cleat, #side_right_cleat').css('height',(default_height-handle_height) - border_width)
-        $('#side_left_cleat, #side_right_cleat').css('top',handle_height)
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* user_height = parseInt(user_height)*12
-user_width = parseInt(user_width)*12
-user_depth = parseInt(user_depth)*12
- */
-/* ============================================== */
-/* ============ U S E R   I N P U T S =========== */
-/* ============================================== */
-
-/* ---------------------------------------------- */ 
-/* ================= H E I G H T ================ */
-/* ---------------------------------------------- */ 
-$('#height').on('input',function(e){
-    user_height = ( $('#height').val()*12 ) 
-    $('#front, #side').css('height',user_height)
-    // for all four cleats on front
-    // MUSEUM CRATE - TOUR CRATE - SLAT CRATE
-    // cleat_height = (user_height-(cleat_width*2) - border_allowance)
-    // $('#front_left_cleat, #side_left_cleat').css('height', cleat_height)
-    // $('#front_right_cleat, #side_right_cleat').css('height',cleat_height)
-    
-    // for two cleats and a handle on front
-    // BASIC CRATE
-    cleat_height = (user_height - border_allowance)   
-        $('#front_left_cleat, #front_right_cleat').css('height', user_height )
-        $('#front_left_cleat, #front_right_cleat').css('top', -border_width  )
-    
-        $('#side_left_cleat, #side_right_cleat').css('height',(user_height-handle_height) - border_width)
-        // $('#front_right_skid, #front_left_skid, #side_right_skid').css('top',user_height+'px')
-        $('#side_handle').css('top', "1-0px" )
-    
-//    expand_container( $('#height').val(), $('#length').val(), $('#depth').val() );
+inch = 10; //enlarges the number to reasonable pixel size
+// default size
+default_height = 2.5 * inch;
+default_width = 15 * inch;
+default_depth = 15 * inch;
+// cleats
+cleat_width = 1.5 * inch; // was 3.5
+// the JS does not calculate well if you scale cleat)Thickness
+// fix this
+cleat_thickness = inch * 1.5; //Thickness of the wood /* SHOUDL BE CREATED/RENAMED AS two_by_thickness */
+//skids
+default_skid_height = 3.5 * inch;
+default_skid_width = 3.5 * inch;
+default_skid_depth = default_depth;
+skid_color = "burlywood";
+skid_angle_color = "tan";
+// handles
+handle_width = 1.5 * inch;
+handle_height = 3.5 * inch;
+horizontal_2_x_edge = 1.5 * inch; // is this ever used??????
+vertical_2_x_edge = 1.5 * inch; // is this ever used??????
+min_handle_height = 20 * inch; // imperative floor height
+
+border_width = 1;
+border_allowance = 2;
+
+top_insulation_thickness = 0.5;
+bottom_insulation_thickness = parseFloat($("#bottom_insulation").val());
+side_wall_insulation_thickness = parseFloat($("#side_wall_insulation").val());
+plywood_thickness = parseFloat($("#plywood_thickness").val());
+void_insulation_thickness = 0.5;
+
+// ============================================== //
+//    set the begining crate to default sizes     //
+// ============================================== //
+
+$("#side_wrapper .container_row, #front_wrapper .container_row").css({
+  height: default_height,
+});
+// for front and top (width)
+$(
+  "#top_wrapper .top_wrapper, #front_wrapper .container_row, .skid_ends_container"
+).css({ width: default_width });
+
+// ===== D E F A U L T   F R O N T wrapper ======?
+$("#front_wrapper .horizontal_side_wall").css({
+  height: (default_height * inch) / 12,
 });
 
+$("#front_wrapper .container_column").css({ width: default_width });
 
-
-
-/* ---------------------------------------------- */ 
-/* ================= L E N G T H ================ */
-/* ---------------------------------------------- */ 
-$('#length').on('input',function(e){
- user_width = parseInt( $('#length').val() )*12
-    $('#front_container').css('width',user_width+handle_depth+handle_depth+border_allowance)
-    $('#front').css('width',user_width-border_allowance)
-    $('#front').css('left',handle_depth+border_width)
-    $('#front_top_cleat').css('width',user_width)
-    $('#front_top_cleat').css('height',cleat_width)
-    $('#front_bottom_cleat').css('width',user_width)
-    
-        // for TOP drawing
-        $('#top_container').css('width', user_width+handle_depth*2+border_allowance) //==========
-        $('#top').css('width', user_width-border_allowance)
-
-
+$(".plywood_edge_grain").css({
+  height: plywood_thickness * inch,
 });
 
+// for top and side (depth) !!
+$("#top_wrapper .container_row").css({ height: default_depth });
+$("#side_wrapper .container_row").css({ width: default_depth });
 
-
-/* ---------------------------------------------- */ 
-/* ================== D E P T H ================= */
-/* ---------------------------------------------- */ 
-$('#depth').on('input',function(e){
-    // alert('Changed!')
-    user_depth = $('#depth').val()*12
-    $('#side').css('height',user_height)
-    $('#side').css('width',user_depth)
-    $('#side_top_cleat').css('width',user_depth)
-    $('#side_top_cleat').css('height',cleat_width)
-    $('#side_bottom_cleat').css('width',user_depth)
-    $('#side_bottom_cleat').css('height',cleat_width)
-    //handle
-    $('#side_handle').css('width', user_depth )
-    // makes skids based on radio button checked at the time of 'depth' change
-    make_skids( $('input[name="skids"]:checked').val() ); 
- //   $('#side_right_skid').css("top", user_height ) // I don't know why this has to be reitterated here.
- 
- 
-    // for DEPTH
-    $('#top_container').css('height', user_depth+gap_tween_drawings+cleat_thickness*2+border_allowance*2) 
-
-
-    $('#top').css('height', user_depth )
-    $('#top_left_handle, #top_right_handle').css('height', user_depth )
- 
-       
-});// end of DEPTH input change
-
-
-
-
-
-// ======== CRATE TYPE input
-// $('select[name="crate_type"]').change(function(){
-//     switch ( $(this).val() ) {
-//     case "basic_flat_ride":
-//         $('input[type=radio][name="skids"][value="4x4"]').attr('checked', true);
-//             //$('.skid_container').show()
-//                 $('#showme').text( $(this).val() + $('input[name="skids"]:checked').val() )
-//         //make_skids( $('input[name="skids"]:checked').val() );// passes radio button value to the function
-//     break;
-//     
-// case "basic_edge_ride":
-//         $('input[type=radio][name="skids"][value="2x4"]').attr('checked', true);
-//                 //$('.skid_container').show()
-//                 $('#showme').text( $(this).val() + $('input[name="skids"]:checked').val() )
-//         //make_skids( $('input[name="skids"]:checked').val() );// passes radio button value to the function
-//     break;
-//     
-// case "travel_frame":
-//         $('input[type=radio][name="skids"][value="none"]').attr('checked', true);
-//             //$('.skid_container').hide()
-//                 $('#showme').text( $(this).val() + $('input[name="skids"]:checked').val() )
-//     break;
-//     
-// case "slat_crate":
-//         $('input[type=radio][name="skids"][value="4x4"]').attr('checked', true); // not working
-//                 //$('.skid_container').show()
-//                     $('#showme').text( $(this).val() + $('input[name="skids"]:checked').val() )
-//         //make_skids( $('input[name="skids"]:checked').val() );// passes radio button value to the function
-//                     //$('#showme').append( " Showing 4x4? " )
-//     break;
-// }
-// });
-
-
-
-
-
-
-
-
-/* ============================================== */
-/* =============== USER NPUT S K I D S ============== */
-/* ============================================== */
-
-
-// ======== SKID TYPE input
-$('input[type=radio][name="skids"]').change(function() {
-    // alert( $('input[name="skids"]:checked').val() ); // only works before the function call
-    $('#showme').text( $('input[name="skids"]:checked').val() )
-    skid_selection = $('input[name="skids"]:checked').val();
-    make_skids( skid_selection );
-    // nothign works after the 'make skids' function call. Look into 'e.preventDefault();' for this
-    // meanwhile, put other actions before the function
+$(".skid_side").css({
+  height: default_skid_height,
+  width: default_depth,
+});
+$(".skid_end").css({
+  // "margin-left": handle_width - cleat_thickness,
+  // "margin-right": handle_width - cleat_thickness,
+  height: default_skid_height,
+  width: default_skid_width,
 });
 
+$(".horizontal_2_x_edge").css({
+  height: horizontal_2_x_edge,
+});
+$(".vertical_2_x_edge").css({
+  width: vertical_2_x_edge,
+});
+// these make the angles from default values
+// calculat and make CSS the same values to work without JS
+// DEFAULT SKIDS FOR 4X4
+$(".cutCorner_1").css({
+  "border-bottom-width": default_skid_height / 2,
+  "border-bottom-style": "solid",
+  "border-bottom-color": skid_angle_color,
+  "border-right-width": default_skid_height / 2,
+  "border-right-style": "solid",
+  "border-right-color": "transparent",
+});
+$(".cutCorner_2").css({
+  "border-bottom-width": default_skid_height / 2,
+  "border-bottom-style": "solid",
+  "border-bottom-color": "white",
+  "border-right-width": default_skid_height / 2,
+  "border-right-style": "solid",
+  "border-right-color": "transparent",
+});
+$(".cutCorner_3").css({
+  "border-bottom-width": default_skid_height / 2,
+  "border-bottom-style": "solid",
+  "border-bottom-color": skid_angle_color,
+  "border-left-width": default_skid_height / 2,
+  "border-left-styl": "solid",
+  "border-left-colo": "transparent",
+});
 
+$(".cutCorner_4").css({
+  "border-bottom-width": default_skid_height / 2,
+  "border-bottom-style": "solid",
+  "border-bottom-color": "white",
+  "border-left-width": default_skid_height / 2,
+  "border-left-style": "solid",
+  "border-left-color": "transparent",
+});
 
+function updateTable() {
+  // ====  P U B L I S H E D  D I M S  ==== //
+  // Calculate the final height from floor
+  final_height_OD = parseFloat(
+    parseInt($("#height").val()) +
+      top_insulation_thickness +
+      bottom_insulation_thickness +
+      plywood_thickness * 2 +
+      default_skid_height / inch
+  );
 
-// ======== Generate appropriate skids based on user input as it changes
-// ======== "someParam" is the skid size choice from the radio buttons 
-function make_skids(someParam) {    
-    //alert( $('input[name=skids]:checked').val() +" is selected")      
-    if (someParam == '2x4') {
-        $('.skid_container').show() 
-        $('#front_left_skid, #front_right_skid, #side_right_skid').css( 'height', default_skid_height/2 )
-        $('#front_left_skid, #front_right_skid').css( 'width', default_skid_width*2 )
-            $('#showme_2').text( $('input[name="skids"]:checked').val() )      
-    }
-    else if (someParam == '4x4') {
-        // alert("Big Skids");
-        $('.skid_container').show()
-        $('#front_left_skid, #front_right_skid, #side_right_skid').css( 'height', default_skid_height )
-        $('#front_left_skid, #front_right_skid').css( 'width', default_skid_width)
-            $('#showme_2').text( $('input[name="skids"]:checked').val() ) 
-    }
-    else if (someParam == 'none') {
-        $('.skid_container').hide()
-            $('#showme_2').text( $('input[name="skids"]:checked').val() )
-    };
-    
-} // END of FUNCTION
+  // Update final crate dims based on DEPTH input
+  // For final crate OD
+  final_depth_OD = parseFloat(
+    user_depth / 12 + side_wall_insulation_thickness * 2 + 3 // two by four thickness times 2
+  );
+  // For 2 x cut length side wall
+  final_depth_ID = parseFloat(
+    user_depth / 12 + side_wall_insulation_thickness * 2
+  );
 
+  // For cinal crate OD
+  final_width_OD = parseFloat(
+    user_width / 12 + side_wall_insulation_thickness * 2 + 3 // two by four thickness times 2
+  );
 
+  // ====  M A T E R I A L S  T A B L E  ==== //
+  // Update materials table
+  // Length
+  $("#two_by_length .tableCell.m").text(side_wall_material + " Ends");
+  $("#two_by_length .tableCell.q").text("2");
+  $("#two_by_length .tableCell.l").text(final_width_OD);
+  // Width
+  $("#two_by_width .tableCell.m").text(side_wall_material + " Sides");
+  $("#two_by_width .tableCell.q").text("2");
+  $("#two_by_width .tableCell.l").text(final_depth_ID);
+  // Plywood size
+  $("#plwyood_top .tableCell.m").text("1/2 inch Chip Board");
+  $("#plwyood_top .tableCell.q").text("2");
+  $("#plwyood_top .tableCell.l").text(final_width_OD);
+  $("#plwyood_top .tableCell.w").text(final_depth_OD);
+  // Sidwall insulation
+  $("#sidewall_insulation_length .tableCell.m").text("Side Wall Insulation");
+  $("#sidewall_insulation_length .tableCell.q").text("1");
+  let sidewall_insulation_perimiter;
+  sidewall_insulation_perimiter = (user_depth / 12) * 2 + (user_width / 12) * 2;
+  $("#sidewall_insulation_length .tableCell.l").text(
+    sidewall_insulation_perimiter
+  );
+  $("#sidewall_insulation_length .tableCell.w").text(user_height);
 
-
-
-
-
-
-
-
-
-
-
-
-/* ============================================== */
-/* ============= SAMPLE / TEST CODE ============= */
-/* ============================================== */
-
-
-// simple function sample code based upon crate type drop down menu
-function doSomething(someParam) {
-    alert("Result: " + someParam);
+  // Update final OD dims
+  $("#final_width_OD").text(final_width_OD + " in");
+  $("#final_depth_OD").text(final_depth_OD + " in");
 }
 
-$('select[name="crate_type"]').change(function() {
-    // doSomething( $(this).val() );// the value passed to the doSomething function 'someParam'
+function updateRednering() {
+  // Update the rendering
+  $("#front_wrapper .container_column .horizontal_side_wall").css({
+    height: user_height * inch,
+  });
+
+  $("#front_wrapper .container_column").css({ width: user_width });
+
+  // Update rendering based on WIDTH input
+  $("#top_wrapper  .top_wrapper").css({
+    width: user_width,
+  });
+
+  $("#top_wrapper .container_row").css({ height: user_depth });
+  // $("#side_wrapper .container, .skid_side").css({ width: user_depth });
+  $("#side_wrapper .side_wrapper .container_row, #side_wrapper .skid_side").css(
+    {
+      width: user_depth,
+    }
+  );
+
+  $(".skid_ends_container").css({
+    width: user_width,
+  });
+}
+
+/* ================= select all on focus ================ */
+function selectInputContents() {
+  // Get the input element
+  let heightInput = document.getElementById("height");
+
+  // Select the contents of the input
+  heightInput.select();
+}
+
+/* ================= HEIGHT input ================ */
+// it would be more DRY to make each of these a function
+// and call that function in the 'on input' below
+// or, rather make a single function that does it all
+/* ================= HEIGHT input ================ */
+/* ================= HEIGHT input ================ */
+/* ================= HEIGHT input ================ */
+/* ================= HEIGHT input ================ */
+/* ================= HEIGHT input ================ */
+/* ================= HEIGHT input ================ */
+/* ================= HEIGHT input ================ */
+/* ================= HEIGHT input ================ */
+/* ================= HEIGHT input ================ */
+/* ================= HEIGHT input ================ */
+/* ================= HEIGHT input ================ */
+// let crate_style = "nothing yet";
+// console.log("BEGINNING crate_style = " + crate_style);
+let user_height;
+let side_wall_material;
+let final_height_OD;
+$("#height").on("blur", function (e) {
+  let maxAllowedHeight = 4.25; // Set the maximum allowed height
+  let rawHeightInput = parseFloat($("#height").val());
+
+  // Calculate user_height based on the parsed input
+  user_height = Math.min(rawHeightInput, maxAllowedHeight);
+
+  // Check the value and adjust user_height accordingly
+  if (rawHeightInput >= 0 && rawHeightInput <= 2.25) {
+    user_height = 2.5;
+    side_wall_material = "2 x 4";
+  } else if (rawHeightInput > 2.25 && rawHeightInput <= 4.25) {
+    user_height = 4.5;
+    side_wall_material = "2 x 6";
+  } else if (rawHeightInput > 4.25) {
+    alert('The max product height is 4.25" for a One-Way Shipper.');
+    user_height = 4.5;
+    side_wall_material = "2 x 6";
+  }
+  // Update the input field with the calculated user_height
+  $("#height").val(user_height.toFixed(2));
+
+  updateRednering();
+  updateTable();
 });
 
+/* ================= Width input ================ */
+/* ================= Width input ================ */
+/* ================= Width input ================ */
+let user_width;
+let final_width_OD;
+$("#width").on("blur", function (e) {
+  user_width = parseInt($("#width").val()) * 12;
+  updateRednering();
+  updateTable();
+});
 
+/* ================= DEPTH input ================ */
+/* ================= DEPTH input ================ */
+/* ================= DEPTH input ================ */
+let user_depth;
+let final_depth_ID;
+let final_depth_OD;
+$("#depth").on("blur", function (e) {
+  user_depth = parseInt($("#depth").val()) * 12;
+  if (user_depth > 108) {
+    // waiting for second digit, less jumpy
+    // alert("Depth greather than 108");
+    // $("#top_wrapper .container").css({ height: user_depth });
+    // $("#side_wrapper .container, .skid_side").css({ width: user_depth });
 
+    // scall form drawing to hit max width if greater than form width
+    // positioning here is shit. Fix this
+    scale_to = 600 / user_depth;
+    if (user_depth > 264) {
+      // alert("Depth greather than 264");
+      $("#rendering_container").css({
+        transform: "scale(" + scale_to + ")",
+        "transform-origin": "top center",
+      });
+      // experimental only
+      $("#rendering_container").css({
+        border: "1px solid green",
+        //  "max-width": "1200px",
+        //  "margin-left" : "20px"
+        //    "display" :" block"
+      });
+      // } else if ( user_depth <= 264 ) {
+      //   $('#rendering_container').css({
+      //     transform: "scale(1)",
+      //     "transform-origin": "top center",
+      //     "display" :" inline-block"
+      //   });
+      //
+    }
+  } // first if statement
 
+  updateRednering();
+  updateTable();
+});
 
+// select all contents of Height input box on page load
+// Not working, fix later
+window.onload = function () {
+  selectInputContents();
+};
 
+// codepen for scaling to viewport
+// https://codepen.io/edwardpayton/pen/pjyogj
 
-
-
-
-
-// NO LONGER NEEDED. 
-//     function expand_container(height,width,depth) {
-//      //alert("first " + height, width, depth);
-//         if ( height == ""){
-//             // alert( "width= "+width )
-//             current_height = default_height
-//         } else {
-//             // alert( $('#depth').val() );
-//             current_height = height*12
-//         }    
-//             if ( width == ""){
-//                 // alert( "width= "+width )
-//                 current_width = default_width
-//             } else {
-//                 // alert( $('#depth').val() );
-//                 current_width = width*12
-//             } 
-//                 if ( depth == ""){
-//                     // alert( "width= "+width )
-//                     current_depth = default_depth
-//                 } else {
-//                     // alert( $('#depth').val() );
-//                     current_depth = depth*12
-//                 } 
-//      
-//                 // if outside cleats on top view {
-//                 //     cleat_thickness = cleat_thickness
-//                 //     } else {
-//                 //         cleat_thickness = 0
-//                 //     }
-//         
-//     // $('#front_container').css('width',default_width+handle_depth+handle_depth) //==========
-//         new_height = parseInt(current_height)+parseInt(default_skid_height)+parseInt(border_allowance)+parseInt(current_depth)+parseInt(gap_tween_drawings)+(parseInt(cleat_thickness)*2)    
-//         $('#rendering_container').css('height', new_height) 
-//         new_width = parseInt(current_width)+parseInt(current_depth)+parseInt(handle_depth)+parseInt(gap_tween_drawings)+parseInt(handle_depth)+(parseInt(border_allowance)*2)
-//         $('#rendering_container').css('width', new_width) 
-//         $('#rendering_container').css('border-color', 'gray') 
-//         
-//     } // end of function
-
-
+// REVISIT THIS LATER *+*+*+*+*+*+**+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+
+// // $(window).height();
+// // $(window).width();
+// $(window).on('resize', function(){
+//   // OK, this should be a percentage of window IF crate is x size and viewport is small, etc...
+//     var win = $(this); //this = window
+//     scale_to = win.width()/800 //0.5 //(win.width);
+// //     if (win.height() >= 320) { $('#rendering_container').css({ border: "3px solid blue" });}
+// //     if (win.width() >= 400) { $('#rendering_container').css({ transform: "scale("+scale_to+")", "transform-origin": "top center" }); }
+// $('#rendering_container').css({ transform: "scale("+scale_to+")", "transform-origin": "top center" });
+// });
+// REVISIT THIS LATER *+*+*+*+*+*+**+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+

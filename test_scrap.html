@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crate Form</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+
+      input[type="submit"] {
+        background-color: #4caf50;
+        color: white;
+        cursor: pointer;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="#" method="post">
+      <label for="client">Client:</label>
+      <input type="text" id="client" name="client" required />
+
+      <label for="jobNumber">Job Number:</label>
+      <input type="text" id="jobNumber" name="jobNumber" required />
+
+      <label for="height">Height:</label>
+      <input type="number" id="height" name="height" required />
+
+      <label for="width">Width:</label>
+      <input type="number" id="width" name="width" required />
+
+      <label for="depth">Depth:</label>
+      <input type="number" id="depth" name="depth" required />
+
+      <label for="plywood_thickness">Plywood Thickness:</label>
+      <select id="plywood_thickness" name="plywood_thickness">
+        <option value="0.375">0.375</option>
+        <option value="0.5">0.5</option>
+        <option value="0.75">0.75</option>
+      </select>
+
+      <!-- <label for="plywood">Plywood:</label>
+      <input type="text" id="plywood" name="plywood" required /> -->
+      <label for="side_wall_insulation">Side Insulation:</label>
+      <select id="side_wall_insulation" name="side_wall_insulation">
+        <option value="0.125">0.125</option>
+        <option value="0.25">0.25</option>
+        <option value="0.5">0.5</option>
+        <option value="1">1</option>
+        <option value="1.5">1.5</option>
+      </select>
+
+      <!-- <label for="sideInsulation">Side Insulation:</label>
+      <input type="text" id="sideInsulation" name="sideInsulation" required /> -->
+
+      <label for="bottom_insulation">Bottom Insulation:</label>
+      <select id="bottom_insulation" name="bottom_insulation">
+        <option value="0.125">0.125</option>
+        <option value="0.25">0.25</option>
+        <option value="0.5">0.5</option>
+        <option value="1">1</option>
+        <option value="1.5">1.5</option>
+      </select>
+
+      <!-- <label for="bottomInsulation">Bottom Insulation:</label>
+      <input
+        type="text"
+        id="bottomInsulation"
+        name="bottomInsulation"
+        required
+      /> -->
+
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>
