@@ -1,6 +1,8 @@
 /* ============================================== */
 /* =============== Generate SKIDS =============== */
 /* ============================================== */
+/* also, new or not? */
+
 
 inch = 10; //enlarges the number to reasonable pixel size
 // default size
