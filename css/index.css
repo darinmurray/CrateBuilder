@@ -10,10 +10,11 @@
 
 body {
   background: WhiteSmoke; /*LightSteelBlue ;*/
-  padding-top: 15px;
+  /* padding-top: 15px; */
   margin: 20px;
   font-family: Helvetica;
   text-align: center;
+  font-size: 22px;
 }
 
 /* ============================================== */
@@ -33,24 +34,27 @@ body {
 #form_and_data {
   display: flex;
   flex-direction: row;
-  border: 1px solid red;
-  background-color: lightgray;
+  /* border: 1px solid lightgray; */
+  /* border-radius: 8px; */
+  background-color: whitesmoke;
 }
 form {
-  background-color: lightskyblue;
+  /* crate form */
+  background-color: #fff;
   border: 1px solid gray;
   border-radius: 8px;
-  max-width: 400px;
-  margin: 0 auto;
+  max-width: 550px;
+  margin: 0px auto;
+  padding: 20px 0 20px 0;
 }
 form .note {
-  font-size: 0.7rem;
+  font-style: italic;
   margin-bottom: 8px;
   margin-top: 8px;
 }
 label {
   display: inline-block;
-  width: 150px;
+  width: 200px;
   text-align: right;
   margin-right: 10px;
 }
@@ -65,20 +69,30 @@ select {
 }
 
 #dim_inputs {
-  border: 1px solid red;
-  border-radius: 20px;
+  /* font-size: 20px; */
+  background-color: black;
+  /* border: 1px solid red; */
+  /* border-radius: 20px; */
 }
 #dim_inputs label {
-  width: 50px;
+  color: white;
+  width: 75px;
+  text-align: right;
+  margin-right: 2px;
 }
 #dim_inputs input {
-  width: 50px;
+  font-size: 20px;
+  margin-top: 7px;
+  /* margin-left: 1px; */
+  width: 75px;
+  border-color: black;
+  border-radius: 8px;
 }
 
 /* end of input form */
 
 #header_wrapper {
-  margin: 20px auto;
+  margin-bottom: 20px;
   padding: 0.5rem;
   background: #fff;
   border: 1px solid gray;
@@ -89,23 +103,27 @@ select {
   background-color: lightpink;
   max-width: 400px;
   margin: 0 auto;
+  background: #fff;
+  border: 1px solid gray;
+  border-radius: 8px;
 }
 
 .final_crate_OD {
   display: inline-block;
   background-color: black;
   color: white;
-  font-size: 1rem;
-  padding: 5px 10px 5px 10px;
-  margin: 10px;
+  /* font-size: 1.25rem; */
+  padding: 15px 10px 15px 10px;
+  /* margin: 10px; */
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
+  width: 100%;
 }
 .final_crate_OD span {
-  font-size: 1rem;
+  /* font-size: 1rem; */
   /* background-color: yellow; */
-  padding: 0.3rem 1rem;
+  padding: 0 3px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;

@@ -14,15 +14,17 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   </head>
   <body>
-    <iphone> 320px </iphone><br />
-    <iphone2> 480px </iphone2>
+    <!-- <iphone> 320px </iphone><br />
+    <iphone2> 480px </iphone2> -->
 
     <div id="header_wrapper">
-      <a href="crate.html">
-        <button>Full Crate</button>
-      </a>
       <header>
-        <h1>One-way Shipper Crate Request</h1>
+        <h1>
+          One-way Shipper Crate Request
+          <a href="crate.html">
+            <button>Full Crate</button>
+          </a>
+        </h1>
       </header>
     </div>
 
@@ -51,10 +53,7 @@
             maxlength="8"
           />
 
-          <div class="note">
-            *Enter exact PRODUCT dimensions only. Packing material dimensions
-            will be automatically included in final crate dimensions
-          </div>
+          <div class="note">Enter exact PRODUCT dimensions.</div>
           <div id="dim_inputs">
             <label for="height">Height:</label>
             <input

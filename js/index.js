@@ -167,8 +167,8 @@ function updateTable() {
   $("#sidewall_insulation_length .tableCell.w").text(user_height);
 
   // Update final OD dims
-  $("#final_width_OD").text(final_width_OD + " in");
-  $("#final_depth_OD").text(final_depth_OD + " in");
+  $("#final_width_OD").text(final_width_OD + '"');
+  $("#final_depth_OD").text(final_depth_OD + '"');
 }
 
 function updateRednering() {
